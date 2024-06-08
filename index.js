@@ -12,7 +12,7 @@ app.use(cors());
 dotenv.config()
 
 const server=http.createServer(app);
-const port=3001;
+const port=5001;
 const url=process.env.FRONTEND_URL
 
 const io=new Server(server,{
@@ -24,4 +24,4 @@ const io=new Server(server,{
 
 ChatSocket(io);
 
-server.listen(port,()=> console.log('server connected port : 3000'));
+server.listen(port,()=> console.log('server connected port : 5001'));
