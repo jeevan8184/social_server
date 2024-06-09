@@ -9,7 +9,7 @@ import dotenv from 'dotenv'
 const app=express();
 app.use(cors());
 
-dotenv.config()
+dotenv.config();
 
 const server=http.createServer(app);
 const port=5001;
@@ -19,7 +19,7 @@ console.log(url);
 
 const io=new Server(server,{
     cors:{
-        origin:"https://social-hdmhb6e55-jeevan8184s-projects.vercel.app/",
+        origin:"https://social-chi-wheat.vercel.app/",
         methods:['GET','POST']
     }
 })
