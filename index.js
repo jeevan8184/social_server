@@ -19,7 +19,7 @@ console.log(url);
 
 const io=new Server(server,{
     cors:{
-        origin:"https://social-chi-wheat.vercel.app/",
+        origin:url,
         methods:['GET','POST']
     }
 })
