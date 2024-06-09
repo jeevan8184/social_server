@@ -12,18 +12,21 @@ app.use(cors());
 dotenv.config();
 
 const server=http.createServer(app);
-const port=4000;
+const port=5000;
 const url=process.env.FRONTEND_URL
 
 console.log(url);
-
-const io=new Server(server,{
-    cors:{
-        origin:`${url}`,
-        methods:['GET','POST']
-    }
-})
+const io=new Server(server);
+//     cors:{
+//         origin:"http://social-1fh3osnfk-jeevan8184s-projects.vercel.app/sign-in",
+//         methods:['GET','POST']
+//     }
+// })
 
 ChatSocket(io);
 
-server.listen(port,()=> console.log('server connected port : 4000'));
+app.get('/', (req, res) => {
+    res.send('Server is up and running!');
+});
+
+server.listen(port,()=> console.log('server connected port : 5000'));

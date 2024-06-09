@@ -7,6 +7,7 @@ const ChatSocket=(io)=> {
     let notifications=[];
 
     io.on('connection',(socket)=> {
+        console.log('socket',socket);
         socket.on('newUser',(userId)=> {
 
             if(!onlineUsers.some((u)=> u?.userId===userId)) {
