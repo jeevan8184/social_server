@@ -12,18 +12,18 @@ app.use(cors());
 dotenv.config();
 
 const server=http.createServer(app);
-const port=5001;
+const port=4000;
 const url=process.env.FRONTEND_URL
 
 console.log(url);
 
 const io=new Server(server,{
     cors:{
-        origin:url,
+        origin:`${url}`,
         methods:['GET','POST']
     }
 })
 
 ChatSocket(io);
 
-server.listen(port,()=> console.log('server connected port : 5001'));
+server.listen(port,()=> console.log('server connected port : 4000'));
