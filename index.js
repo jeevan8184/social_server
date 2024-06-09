@@ -25,6 +25,10 @@ const io=new Server(server);
 
 ChatSocket(io);
 
+io.on('connection',(socket)=>{
+    console.log('socket',socket);
+})
+
 app.get('/', (req, res) => {
     res.send('Server is up and running!');
 });
