@@ -15,9 +15,11 @@ const server=http.createServer(app);
 const port=5001;
 const url=process.env.FRONTEND_URL
 
+console.log(url);
+
 const io=new Server(server,{
     cors:{
-        origin:url,
+        origin:"https://social-hdmhb6e55-jeevan8184s-projects.vercel.app/",
         methods:['GET','POST']
     }
 })
